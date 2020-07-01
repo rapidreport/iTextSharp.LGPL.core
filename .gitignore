@@ -1,0 +1,8 @@
+# /
+/.vs
+/*.suo
+
+# /barcode/
+/iTextSharp/bin
+/iTextSharp/obj
+/iTextSharp/*.user

@@ -1,0 +1,119 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>systembase.iTextSharp</AssemblyName>
+    <RootNamespace></RootNamespace>
+    <Description>Original : https://itextpdf.com/</Description>
+    <Company>systembase.co.jp</Company>
+    <Product>RapidReport</Product>
+    <Authors>systembase.co.jp</Authors>
+    <Version>4.1.6</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="text.pdf.fonts\**" />
+    <EmbeddedResource Remove="text.pdf.fonts\**" />
+    <None Remove="text.pdf.fonts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="iTextSharp\text\pdf\fonts\Adobe-CNS1-UCS2.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\Adobe-GB1-UCS2.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\Adobe-Japan1-UCS2.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\Adobe-Korea1-UCS2.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\cjkencodings.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\cjkfonts.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\Courier-Bold.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Courier-BoldOblique.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Courier-Oblique.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Courier.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\glyphlist.txt" />
+    <None Remove="iTextSharp\text\pdf\fonts\HeiseiKakuGo-W5.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\HeiseiMin-W3.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\Helvetica-Bold.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Helvetica-BoldOblique.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Helvetica-Oblique.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Helvetica.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\HYGoThic-Medium.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\HYSMyeongJo-Medium.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\HYSMyeongJoStd-Medium.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\KozMinPro-Regular.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\MHei-Medium.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\MS-Gothic.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\MS-Mincho.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\MSung-Light.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\MSungStd-Light.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\STSong-Light.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\STSongStd-Light.properties" />
+    <None Remove="iTextSharp\text\pdf\fonts\Symbol.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Times-Bold.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Times-BoldItalic.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Times-Italic.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\Times-Roman.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniCNS-UCS2-H.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniCNS-UCS2-V.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniGB-UCS2-H.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniGB-UCS2-V.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniJIS-UCS2-H.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniJIS-UCS2-HW-H.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniJIS-UCS2-HW-V.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniJIS-UCS2-V.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniKS-UCS2-H.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\UniKS-UCS2-V.cmap" />
+    <None Remove="iTextSharp\text\pdf\fonts\ZapfDingbats.afm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Adobe-CNS1-UCS2.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Adobe-GB1-UCS2.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Adobe-Japan1-UCS2.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Adobe-Korea1-UCS2.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\cjkencodings.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\cjkfonts.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Courier-Bold.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Courier-BoldOblique.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Courier-Oblique.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Courier.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\glyphlist.txt" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\HeiseiKakuGo-W5.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\HeiseiMin-W3.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Helvetica-Bold.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Helvetica-BoldOblique.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Helvetica-Oblique.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Helvetica.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\HYGoThic-Medium.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\HYSMyeongJo-Medium.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\HYSMyeongJoStd-Medium.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\KozMinPro-Regular.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\MHei-Medium.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\MS-Gothic.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\MS-Mincho.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\MSung-Light.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\MSungStd-Light.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\STSong-Light.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\STSongStd-Light.properties" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Symbol.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Times-Bold.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Times-BoldItalic.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Times-Italic.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\Times-Roman.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniCNS-UCS2-H.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniCNS-UCS2-V.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniGB-UCS2-H.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniGB-UCS2-V.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniJIS-UCS2-H.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniJIS-UCS2-HW-H.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniJIS-UCS2-HW-V.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniJIS-UCS2-V.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniKS-UCS2-H.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniKS-UCS2-V.cmap" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\ZapfDingbats.afm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.1" />
+  </ItemGroup>
+
+</Project>
