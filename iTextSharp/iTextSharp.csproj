@@ -9,6 +9,8 @@
     <Product>RapidReport</Product>
     <Authors>systembase.co.jp</Authors>
     <Version>4.1.6</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>iTextSharp.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
