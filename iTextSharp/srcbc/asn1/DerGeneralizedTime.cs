@@ -154,8 +154,7 @@ namespace Org.BouncyCastle.Asn1
 		{
 			char sign = '+';
 
-			// Note: GetUtcOffset incorporates Daylight Savings offset
-			int minutes = TimeZone.CurrentTimeZone.GetUtcOffset(ToDateTime()).Minutes;
+			int minutes = System.TimeZoneInfo.Local.GetUtcOffset(ToDateTime()).Minutes;
 			if (minutes < 0)
 			{
 				sign = '-';

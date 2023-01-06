@@ -106,7 +106,7 @@ internal class CJKFont : BaseFont {
                 cjkEncodings.Load(isp);
                 isp.Close();
             }
-            catch(Exception ex) {
+            catch(Exception) {
                 cjkFonts = new Properties();
                 cjkEncodings = new Properties();
             }

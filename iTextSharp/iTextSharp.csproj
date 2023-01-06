@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>systembase.iTextSharp</AssemblyName>
     <RootNamespace></RootNamespace>
     <Description>Original : https://itextpdf.com/</Description>
     <Company>systembase.co.jp</Company>
     <Product>RapidReport</Product>
     <Authors>systembase.co.jp</Authors>
-    <Version>4.1.7</Version>
+    <Version>4.1.6.1</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>iTextSharp.snk</AssemblyOriginatorKeyFile>
-    <AssemblyVersion>4.1.7</AssemblyVersion>
-    <FileVersion>4.1.7</FileVersion>
+    <AssemblyVersion>4.1.6.1</AssemblyVersion>
+    <FileVersion>4.1.6.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -113,10 +113,6 @@
     <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniKS-UCS2-H.cmap" />
     <EmbeddedResource Include="iTextSharp\text\pdf\fonts\UniKS-UCS2-V.cmap" />
     <EmbeddedResource Include="iTextSharp\text\pdf\fonts\ZapfDingbats.afm" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
   </ItemGroup>
 
 </Project>

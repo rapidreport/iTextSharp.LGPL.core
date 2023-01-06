@@ -415,9 +415,11 @@ namespace Org.BouncyCastle.Apache.Bzip2
 
         bool closed = false;
 
+#pragma warning disable CS0465 // Finalize' メソッドを導入すると、デストラクターの呼び出しに影響する可能性があります
         protected void Finalize() {
             Close();
         }
+#pragma warning restore CS0465 // Finalize' メソッドを導入すると、デストラクターの呼び出しに影響する可能性があります
 
         public override void Close() {
             if (closed) {

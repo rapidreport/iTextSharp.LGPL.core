@@ -2844,8 +2844,7 @@ namespace iTextSharp.text.pdf {
             prs.AddDefaultColor(name, obj);
         }
 
-        public void Transform(System.Drawing.Drawing2D.Matrix tx) {
-            float[] c = tx.Elements;
+        public void Transform(float[] c) {
             ConcatCTM(c[0], c[1], c[2], c[3], c[4], c[5]);
         }
 
