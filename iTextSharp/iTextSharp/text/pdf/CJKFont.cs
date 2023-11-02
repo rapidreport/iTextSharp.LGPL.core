@@ -134,51 +134,63 @@ internal class CJKFont : BaseFont {
         this.fontName = fontName;
         encoding = CJK_ENCODING;
         vertical = enc.EndsWith("V");
-        CMap = enc;
-        if (enc.StartsWith("Identity-")) {
-            cidDirect = true;
-            string s = cjkFonts[fontName];
-            s = s.Substring(0, s.IndexOf('_'));
-            char[] c = (char[])allCMaps[s];
-            if (c == null) {
-                c = ReadCMap(s);
+        CMap = enc;        
+        lock (allCMaps) {
+            if (enc.StartsWith("Identity-"))
+            {
+                cidDirect = true;
+                string s = cjkFonts[fontName];
+                s = s.Substring(0, s.IndexOf('_'));
+                char[] c = (char[])allCMaps[s];
                 if (c == null)
-                    throw new DocumentException("The cmap " + s + " does not exist as a resource.");
-                c[CID_NEWLINE] = '\n';
-                allCMaps.Add(s, c);
-            }
-            translationMap = c;
-        }
-        else {
-            char[] c = (char[])allCMaps[enc];
-            if (c == null) {
-                string s = cjkEncodings[enc];
-                if (s == null)
-                    throw new DocumentException("The resource cjkencodings.properties does not contain the encoding " + enc);
-                StringTokenizer tk = new StringTokenizer(s);
-                string nt = tk.NextToken();
-                c = (char[])allCMaps[nt];
-                if (c == null) {
-                    c = ReadCMap(nt);
-                    allCMaps.Add(nt, c);
+                {
+                    c = ReadCMap(s);
+                    if (c == null)
+                        throw new DocumentException("The cmap " + s + " does not exist as a resource.");
+                    c[CID_NEWLINE] = '\n';
+                    allCMaps.Add(s, c);
                 }
-                if (tk.HasMoreTokens()) {
-                    string nt2 = tk.NextToken();
-                    char[] m2 = ReadCMap(nt2);
-                    for (int k = 0; k < 0x10000; ++k) {
-                        if (m2[k] == 0)
-                            m2[k] = c[k];
+                translationMap = c;
+            }
+            else
+            {
+                char[] c = (char[])allCMaps[enc];
+                if (c == null)
+                {
+                    string s = cjkEncodings[enc];
+                    if (s == null)
+                        throw new DocumentException("The resource cjkencodings.properties does not contain the encoding " + enc);
+                    StringTokenizer tk = new StringTokenizer(s);
+                    string nt = tk.NextToken();
+                    c = (char[])allCMaps[nt];
+                    if (c == null)
+                    {
+                        c = ReadCMap(nt);
+                        allCMaps.Add(nt, c);
                     }
-                    allCMaps.Add(enc, m2);
-                    c = m2;
+                    if (tk.HasMoreTokens())
+                    {
+                        string nt2 = tk.NextToken();
+                        char[] m2 = ReadCMap(nt2);
+                        for (int k = 0; k < 0x10000; ++k)
+                        {
+                            if (m2[k] == 0)
+                                m2[k] = c[k];
+                        }
+                        allCMaps.Add(enc, m2);
+                        c = m2;
+                    }
                 }
+                translationMap = c;
             }
-            translationMap = c;
         }
-        fontDesc = (Hashtable)allFonts[fontName];
-        if (fontDesc == null) {
-            fontDesc = ReadFontProperties(fontName);
-            allFonts.Add(fontName, fontDesc);
+        lock (allFonts) {
+            fontDesc = (Hashtable)allFonts[fontName];
+            if (fontDesc == null)
+            {
+                fontDesc = ReadFontProperties(fontName);
+                allFonts.Add(fontName, fontDesc);
+            }
         }
         hMetrics = (IntHashtable)fontDesc["W"];
         vMetrics = (IntHashtable)fontDesc["W2"];
