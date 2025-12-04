@@ -363,21 +363,26 @@ namespace iTextSharp.text.pdf {
             }
             
             internal PdfIndirectObject Add(PdfObject objecta, int refNumber, bool inObjStm) {
-                if (inObjStm && objecta.CanBeInObjStm() && writer.FullCompression) {
-                    PdfCrossReference pxref = AddToObjStm(objecta, refNumber);
-                    PdfIndirectObject indirect = new PdfIndirectObject(refNumber, objecta, writer);
-                    xrefs.Remove(pxref);
-                    xrefs[pxref] = null;
-                    return indirect;
-                }
-                else {
-                    PdfIndirectObject indirect = new PdfIndirectObject(refNumber, objecta, writer);
-                    PdfCrossReference pxref = new PdfCrossReference(refNumber, position);
-                    xrefs.Remove(pxref);
-                    xrefs[pxref] = null;
-                    indirect.WriteTo(writer.Os);
-                    position = writer.Os.Counter;
-                    return indirect;
+                lock (typeof(PdfWriter))
+                {
+                    if (inObjStm && objecta.CanBeInObjStm() && writer.FullCompression)
+                    {
+                        PdfCrossReference pxref = AddToObjStm(objecta, refNumber);
+                        PdfIndirectObject indirect = new PdfIndirectObject(refNumber, objecta, writer);
+                        xrefs.Remove(pxref);
+                        xrefs[pxref] = null;
+                        return indirect;
+                    }
+                    else
+                    {
+                        PdfIndirectObject indirect = new PdfIndirectObject(refNumber, objecta, writer);
+                        PdfCrossReference pxref = new PdfCrossReference(refNumber, position);
+                        xrefs.Remove(pxref);
+                        xrefs[pxref] = null;
+                        indirect.WriteTo(writer.Os);
+                        position = writer.Os.Counter;
+                        return indirect;
+                    }
                 }
             }
             

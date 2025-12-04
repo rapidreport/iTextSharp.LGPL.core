@@ -8,7 +8,7 @@
     <Company>systembase.co.jp</Company>
     <Product>RapidReport</Product>
     <Authors>systembase.co.jp</Authors>
-    <Version>4.1.6.2</Version>
+    <Version>4.1.6.3</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>iTextSharp.snk</AssemblyOriginatorKeyFile>
     <AssemblyVersion>4.1.6.1</AssemblyVersion>
