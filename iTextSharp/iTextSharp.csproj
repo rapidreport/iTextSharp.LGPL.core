@@ -12,7 +12,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>iTextSharp.snk</AssemblyOriginatorKeyFile>
     <AssemblyVersion>4.1.6.1</AssemblyVersion>
-    <FileVersion>4.1.6.2</FileVersion>
+    <FileVersion>4.1.6.3</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
